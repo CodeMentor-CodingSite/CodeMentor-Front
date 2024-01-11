@@ -19,7 +19,8 @@
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/unbound-method": "off"
+    "@typescript-eslint/unbound-method": "off",
+    "import/extensions": "off"
   },
   "ignorePatterns": ["node_modules/", "*.config.js"]
 }
