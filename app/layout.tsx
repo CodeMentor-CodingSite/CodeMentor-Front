@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Providers from './providers';
 import '@/styles/globals.css';
 import { inter } from '@/public/fonts/fonts';
+import Header from '@/components/common/Header';
 
 export const metadata: Metadata = {
   title: 'Code Mentor',
@@ -19,7 +20,8 @@ export default function RootLayout({
         className={`${inter.variable} bg-background h-screen w-full text-white`}
       >
         <Providers>
-          <main className="w-desktop h-full mx-auto">{children}</main>
+          <Header />
+          <main className="h-full mx-auto w-desktop">{children}</main>
         </Providers>
       </body>
     </html>
