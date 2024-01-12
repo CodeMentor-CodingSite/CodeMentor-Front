@@ -3,6 +3,7 @@ import Providers from './providers';
 import '@/styles/globals.css';
 import { inter } from '@/public/fonts/fonts';
 import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
 
 export const metadata: Metadata = {
   title: 'Code Mentor',
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className="h-full mx-auto w-desktop">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>

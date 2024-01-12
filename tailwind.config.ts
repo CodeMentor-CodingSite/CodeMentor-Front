@@ -15,6 +15,7 @@ const config: Config = {
         component: '#2A2A2A',
         border: '#606060',
         subtext: '#A3A3A3',
+        inactive: '#666666'
       },
       width: {
         desktop: '1280px',

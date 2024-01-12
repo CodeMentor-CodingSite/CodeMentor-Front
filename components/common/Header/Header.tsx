@@ -9,7 +9,7 @@ import {
 
 export default function Header() {
   return (
-    <div className="h-16 mx-auto">
+    <header className="h-16 mx-auto">
       <Navbar
         position="static"
         className="relative bg-component border-border"
@@ -17,7 +17,7 @@ export default function Header() {
       >
         <NavbarBrand className="absolute left-[-128px]">
           <Link href="/" color="warning" className="text-[32px] font-bold">
-            <p>Code Mentor</p>
+            <h1>Code Mentor</h1>
           </Link>
         </NavbarBrand>
 
@@ -42,6 +42,6 @@ export default function Header() {
           </NavbarItem>
         </NavbarContent>
       </Navbar>
-    </div>
+    </header>
   );
 }
