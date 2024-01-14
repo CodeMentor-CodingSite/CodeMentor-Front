@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} bg-background h-screen w-full text-white`}
+        className={`${inter.variable} bg-background h-full min-h-screen w-full text-white`}
       >
         <Providers>
           <Header />
-          <main className="h-full mx-auto w-desktop">{children}</main>
+          <main className="h-full mx-auto my-16 w-desktop">{children}</main>
           <Footer />
         </Providers>
       </body>
