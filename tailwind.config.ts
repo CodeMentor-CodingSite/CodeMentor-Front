@@ -11,11 +11,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#1A1A1A',
-        component: '#2A2A2A',
-        border: '#606060',
-        subtext: '#A3A3A3',
-        inactive: '#666666'
+        backgroundDark: '#1A1A1A',
+        componentDark: '#2A2A2A',
+        borderDark: '#606060',
+        subtextDark: '#A3A3A3',
+        inactiveDark: '#666666'
       },
       width: {
         desktop: '1280px',

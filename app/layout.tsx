@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} bg-background h-full min-h-screen w-full text-white`}
+        className={`${inter.variable} bg-backgroundDark h-full min-h-screen w-full text-white`}
       >
         <Providers>
           <Header />

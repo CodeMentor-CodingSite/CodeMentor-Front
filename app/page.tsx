@@ -1,3 +1,4 @@
+import { Link } from '@nextui-org/react';
 import PlanItem from '@/containers/studyplan';
 
 const studyPlanItems = [
@@ -79,15 +80,25 @@ export default function Home() {
       <section className="mb-16">
         <header className="flex items-end justify-between mb-5">
           <h1 className="text-4xl font-semibold">Study Plan</h1>
-          <p className="text-xl font-bold text-[#0A84FF]">See all</p>
+          <Link href="/studyplan">
+            <p className="text-xl font-bold text-[#0A84FF]">See all</p>
+          </Link>
         </header>
+        <div className="grid grid-cols-3 gap-x-8 gap-y-7 auto-rows-[160px]">
+          {studyPlanItems
+            .map(({ imgUrl, label, description }) => (
+              <PlanItem
+                imgUrl={imgUrl}
+                label={label}
+                description={description}
+              />
+            ))
+            .slice(0, 6)}
+        </div>
       </section>
-      <section className="grid grid-cols-3 gap-x-8 gap-y-7 auto-rows-[160px]">
-        {studyPlanItems
-          .map(({ imgUrl, label, description }) => (
-            <PlanItem imgUrl={imgUrl} label={label} description={description} />
-          ))
-          .slice(0, 6)}
+
+      <section>
+        <div>problem</div>
       </section>
     </>
   );

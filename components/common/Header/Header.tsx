@@ -12,7 +12,7 @@ export default function Header() {
     <header className="h-16 mx-auto">
       <Navbar
         position="static"
-        className="relative bg-component border-border"
+        className="relative bg-componentDark border-borderDark"
         isBordered
       >
         <NavbarBrand className="absolute left-[-128px]">
@@ -25,7 +25,7 @@ export default function Header() {
           <NavbarItem>
             <Button
               as={Link}
-              className="text-subtext bg-component text-2xl h-12 w-[120px] font-bold"
+              className="text-subtextDark bg-componentDark text-2xl h-12 w-[120px] font-bold"
             >
               Sign In
             </Button>
