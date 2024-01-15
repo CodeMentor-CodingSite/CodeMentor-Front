@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Providers from './providers';
 import '@/styles/globals.css';
 import { inter } from '@/public/fonts/fonts';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
 
 export const metadata: Metadata = {
   title: 'Code Mentor',
@@ -16,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} bg-background h-screen w-full text-white`}
+        className={`${inter.variable} bg-white dark:bg-backgroundDark h-full min-h-screen w-full dark:text-white text-black`}
       >
         <Providers>
-          <main className="w-desktop h-full mx-auto">{children}</main>
+          <Header />
+          <main className="h-full mx-auto my-16 w-desktop">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
