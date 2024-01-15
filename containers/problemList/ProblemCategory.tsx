@@ -10,6 +10,7 @@ import {
 } from '@nextui-org/react';
 import { studyPlanItems } from '@/app/page';
 import { IconSearch, IconAttempted, IconSolved, IconTodo } from '@/public/svgs';
+import capitalizeFirstChar from '@/utils/capitalizeFirstChar';
 
 const difficultyItems = [
   {
@@ -81,14 +82,14 @@ export default function ProblemCategory() {
         <Select items={studyPlanItems} label="Lists">
           {({ label }) => (
             <SelectItem key={label} value={label}>
-              {label}
+              {capitalizeFirstChar(label)}
             </SelectItem>
           )}
         </Select>
         <Select items={difficultyItems} label="Difficulty">
           {({ label }) => (
             <SelectItem key={label} value={label}>
-              {label}
+              {capitalizeFirstChar(label)}
             </SelectItem>
           )}
         </Select>
@@ -108,20 +109,20 @@ export default function ProblemCategory() {
                 )
               }
             >
-              {label}
+              {capitalizeFirstChar(label)}
             </SelectItem>
           )}
         </Select>
         <Autocomplete defaultItems={TagsItems} label="Tags">
           {({ label }) => (
             <AutocompleteItem key={label} value={label}>
-              {label}
+              {capitalizeFirstChar(label)}
             </AutocompleteItem>
           )}
         </Autocomplete>
         <Input
           type="text"
-          placeholder="Search question"
+          placeholder="Search questions"
           startContent={<IconSearch />}
           style={{ width: '280px', fontSize: '16px' }}
         />
