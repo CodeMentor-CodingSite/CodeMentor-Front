@@ -80,8 +80,8 @@ export default function Home() {
       <section className="mb-16">
         <header className="flex items-end justify-between mb-5">
           <h1 className="text-4xl font-semibold">Study Plan</h1>
-          <Link href="/studyplan">
-            <p className="text-xl font-bold text-[#0A84FF]">See all</p>
+          <Link href="/studyplan" className="text-xl font-bold text-[#0A84FF]">
+            See all
           </Link>
         </header>
         <div className="grid grid-cols-3 gap-x-8 gap-y-7 auto-rows-[160px]">
