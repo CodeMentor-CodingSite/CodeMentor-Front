@@ -40,7 +40,7 @@ function LoginPage() {
                 </form>
                 <div className='w-full flex items-center px-2'>
                     <Link href='#' className='mr-auto text-[#50707D] dark:text-[#82A3B1] text-sm'>비밀번호 찾기</Link>
-                    <Link href='#' className='ml-auto text-[#50707D] dark:text-[#82A3B1] text-sm'>회원가입</Link>
+                    <Link href='/signUp' className='ml-auto text-[#50707D] dark:text-[#82A3B1] text-sm'>회원가입</Link>
                 </div>
             </div>
     );

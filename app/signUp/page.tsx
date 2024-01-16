@@ -53,8 +53,8 @@ function SignUpPage() {
                 </Button>
             </form>
             <div className='w-full h-[70px] px-2 flex justify-center items-center space-x-4'>
-                <Link href='#' className='text-[#50707D] text-md font-medium text-[#aaa]'>계정이 있으신가요?</Link>
-                <Link href='#' className='text-[#50707D] text-md font-bold text-[#50707] dark:text-[#82A3B1] '>로그인</Link>
+                <span className='text-[#50707D] text-md font-medium text-[#aaa]'>계정이 있으신가요?</span>
+                <Link href='/login' className='text-[#50707D] text-md font-bold text-[#50707] dark:text-[#82A3B1]'>로그인</Link>
             </div>
         </div>
     );
