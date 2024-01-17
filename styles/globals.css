@@ -28,6 +28,8 @@
     [type='password'], [type='number'], [type='date'], [type='datetime-local'],
     [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'],
     [multiple], textarea, select {
-        @apply bg-white dark:bg-inputDark placeholder-[#8DA4B1] dark:placeholder-inputTextDark border-[#CDD8DE] dark:border-inputStrokeDark;
+        @apply flex-1 w-full bg-white dark:bg-inputDark placeholder-[#8DA4B1] dark:placeholder-inputTextDark border-1 border-[#CDD8DE]
+        dark:border-inputStrokeDark rounded-sm appearance-none focus:outline-none focus:border-none;
     }
 }
+
