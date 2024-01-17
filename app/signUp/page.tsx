@@ -2,19 +2,14 @@ import React from 'react';
 import {Button} from "@nextui-org/react";
 import Link from "next/link";
 import Input from "@/components/common/Form";
+import Logo from "@/components/common/Header/Logo";
 
 function SignUpPage() {
-
-
     return (
         <div className='w-fit min-h-[600px] mx-auto p-[20px] flex flex-col items-center space-y-[20px]
          border border-[#e8e8e8] dark:border-[#464746] dark:bg-[#121212] shadow-lg'
         >
-            <h1
-                className='min-w-[333px] mt-[50px] mb-[30px] text-3xl text-center font-bold text-[#f5a524]'
-            >
-                Code Mentor
-            </h1>
+            <Logo className='min-w-[333px] mt-[50px] mb-[30px] text-3xl text-center'/>
             <form
                 action=""
                 className='min-w-[340px] flex flex-col space-y-[20px]'
