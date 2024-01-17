@@ -77,7 +77,7 @@ const TagsItems = [
 
 export default function ProblemCategory() {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 items-center">
       <div className="flex w-full gap-2">
         <Select items={studyPlanItems} label="Lists">
           {({ label }) => (
