@@ -121,6 +121,7 @@ export default function ProblemList() {
         {problemItems.map(
           ({ status, num, title, solution, acceptance, difficulty }, index) => (
             <tr
+              key={num}
               className="h-16 leading-16"
               style={
                 // eslint-disable-next-line no-nested-ternary
