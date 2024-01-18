@@ -28,7 +28,7 @@ function Input({id, label = '', disabled = false, errorMessage = '', ...props}: 
             />
             {
                 errorMessage !== '' &&
-                <p className='text-md text-red-500'>{errorMessage}</p>
+                <p className='text-red-500 text-md'>{errorMessage}</p>
             }
         </div>
     );

@@ -4,11 +4,11 @@ import {
   NavbarContent,
   NavbarItem,
   Button,
-  Link as NextUILink
+  Link as NextUILink,
 } from '@nextui-org/react';
-import Link from "next/link";
+import Link from 'next/link';
 import DarkModeButton from './DarkModeButton';
-import Logo from "@/components/common/Header/Logo";
+import Logo from '@/components/common/Header/Logo';
 
 export default function Header() {
   return (
@@ -20,7 +20,7 @@ export default function Header() {
       >
         <NavbarBrand className="absolute left-[-128px]">
           <Link href="/">
-            <Logo className='text-[32px]'/>
+            <Logo className="text-[32px]" />
           </Link>
         </NavbarBrand>
 
@@ -36,6 +36,7 @@ export default function Header() {
               as={NextUILink}
               variant="light"
               className="text-subtext  text-2xl h-12 w-[120px] font-bold"
+              href="login"
             >
               Sign In
             </Button>
@@ -46,6 +47,7 @@ export default function Header() {
               variant="flat"
               color="warning"
               className="text-2xl h-12 w-[120px] font-bold"
+              href="signUp"
             >
               Sign Up
             </Button>

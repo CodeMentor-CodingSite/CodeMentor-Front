@@ -32,7 +32,7 @@ function LoginPage() {
           로그인
         </Button>
       </form>
-      <div className="w-full flex items-center px-2">
+      <div className="flex items-center w-full px-2">
         <Link
           href="#"
           className="mr-auto text-[#50707D] dark:text-[#82A3B1] text-sm"

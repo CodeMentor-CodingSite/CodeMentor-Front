@@ -1,14 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { Button } from '@nextui-org/react';
 import {
-  IconTodo,
   IconAttempted,
   IconSolved,
   IconSolution,
-  IconAscendingOrder,
   IconDescendingOrder,
-  IconUnordered,
 } from '@/public/svgs';
 import capitalizeFirstChar from '@/utils/capitalizeFirstChar';
 
@@ -105,19 +103,40 @@ export default function ProblemList() {
   return (
     <table className="w-full text-xl table-fixed">
       <colgroup>
+        <col width={8} />
+        <col width={54} />
         <col width={10} />
-        <col width={50} />
-        <col width={10} />
-        <col width={15} />
-        <col width={15} />
+        <col width={16} />
+        <col width={12} />
       </colgroup>
       <thead>
-        <tr className="font-medium text-subtext text-left h-16 border-b dark:border-borderDark">
+        <tr className="font-medium text-subtext text-left h-16 border-b dark:border-borderDark leading-[64px] ">
           <th className="pl-3">Status</th>
-          <th>Title</th>
+          <th className="flex items-center justify-between mr-10">
+            Title
+            <Button isIconOnly className="bg-white dark:bg-backgroundDark">
+              <IconDescendingOrder />
+            </Button>
+          </th>
           <th>Solution</th>
-          <th>Acceptance</th>
-          <th>Difficulty</th>
+          <th className="relative">
+            Acceptance
+            <Button
+              isIconOnly
+              className="absolute bg-white right-3 dark:bg-backgroundDark top-3"
+            >
+              <IconDescendingOrder />
+            </Button>
+          </th>
+          <th className="relative">
+            Difficulty
+            <Button
+              isIconOnly
+              className="absolute right-0 bg-white dark:bg-backgroundDark top-3"
+            >
+              <IconDescendingOrder />
+            </Button>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -136,7 +155,7 @@ export default function ProblemList() {
                 ) : null}
               </td>
 
-              <td className="truncate pl-3">
+              <td className="pl-3 truncate">
                 <Link
                   href={`/problems/${num}`}
                 >{`${num.toString()}. ${title}`}</Link>
