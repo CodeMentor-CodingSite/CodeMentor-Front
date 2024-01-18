@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import Providers from './providers';
 import '@/styles/globals.css';
 import { inter } from '@/public/fonts/fonts';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
+import { Header, Footer } from '@/components/common';
 
 export const metadata: Metadata = {
   title: 'Code Mentor',

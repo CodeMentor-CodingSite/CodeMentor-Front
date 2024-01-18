@@ -1,7 +1,8 @@
 import { Link } from '@nextui-org/react';
 import PlanItem from '@/containers/studyplan';
+import { ProblemCategory, ProblemList } from '@/containers/problemList';
 
-const studyPlanItems = [
+export const studyPlanItems = [
   {
     imgUrl: '/mocks/mock_studyplan_img_1.png',
     label: 'Top Interview 150',
@@ -9,57 +10,57 @@ const studyPlanItems = [
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_2.png',
-    label: 'Top Interview 150',
+    label: 'Leet Code 75',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_3.png',
-    label: 'Top Interview 150 gggggggggggggg',
+    label: 'SQL 50',
     description: 'Must_Do List for Interview Prep gggggggggggggggg',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_4.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 120',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_5.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 140',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_6.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 130',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_7.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 15000',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_8.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 15011',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_1.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 1520',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_2.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 1530',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_3.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 1540',
     description: 'Must_Do List for Interview Prep',
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_4.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 1550',
     description: 'Must_Do List for Interview Prep',
   },
   {
@@ -69,7 +70,7 @@ const studyPlanItems = [
   },
   {
     imgUrl: '/mocks/mock_studyplan_img_6.png',
-    label: 'Top Interview 150',
+    label: 'Top Interview 15066',
     description: 'Must_Do List for Interview Prep',
   },
 ];
@@ -80,7 +81,7 @@ export default function Home() {
       <section className="mb-16">
         <header className="flex items-end justify-between mb-5">
           <h1 className="text-4xl font-semibold">Study Plan</h1>
-          <Link href="/studyplan" className="text-xl font-bold text-[#0A84FF]">
+          <Link href="/studyplan" className="text-xl font-bold text-themeBlue">
             See all
           </Link>
         </header>
@@ -97,8 +98,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <div>problem</div>
+      <section className="flex flex-col gap-6">
+        <ProblemCategory />
+        <ProblemList />
       </section>
     </>
   );

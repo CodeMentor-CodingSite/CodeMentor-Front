@@ -6,6 +6,7 @@ const config: Config = {
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
         './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './containers/**/*.{js,ts,jsx,tsx,mdx}',
         "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
     ],
     theme: {
@@ -19,7 +20,11 @@ const config: Config = {
                 inputDark: '#3B3C3B',
                 inputStrokeDark:'#808587',
                 inputTextDark:'#879EA8',
-                formButtonDark:'#476370'
+                formButtonDark:'#476370',
+                themeBlue: '#0070EF',
+                themeGreen: '#29C244',
+                themeRed: '#EF4643',
+                themeYellow: '#F7BB1F',
             },
             width: {
                 desktop: '1280px',
