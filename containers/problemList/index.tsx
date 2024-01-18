@@ -1,3 +1,4 @@
 import ProblemCategory from './ProblemCategory';
+import ProblemList from './ProblemList';
 
-export default ProblemCategory;
+export { ProblemCategory, ProblemList };

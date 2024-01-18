@@ -1,6 +1,6 @@
 import { Link } from '@nextui-org/react';
 import PlanItem from '@/containers/studyplan';
-import ProblemCategory from '@/containers/problemList';
+import { ProblemCategory, ProblemList } from '@/containers/problemList';
 
 export const studyPlanItems = [
   {
@@ -98,8 +98,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="flex flex-col gap-6">
         <ProblemCategory />
+        <ProblemList />
       </section>
     </>
   );

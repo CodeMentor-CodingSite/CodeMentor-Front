@@ -15,14 +15,14 @@ const config: Config = {
         componentDark: '#2A2A2A',
         borderDark: '#606060',
         subtext: '#A3A3A3',
-        inactive: '#666666'
+        inactive: '#666666',
       },
       width: {
         desktop: '1280px',
       },
       minWidth: {
         desktop: '1280px',
-      }
+      },
     },
   },
   darkMode: 'class',

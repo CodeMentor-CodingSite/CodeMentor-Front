@@ -13,7 +13,7 @@ export default function PlanItem({
   description,
 }: PlanItemProps) {
   return (
-    <Card className="flex flex-row items-center gap-3 px-5 dark:bg-componentDark">
+    <Card className="flex flex-row items-center px-5 gap-3 dark:bg-componentDark">
       <Image
         src={imgUrl}
         width={96}
@@ -27,7 +27,7 @@ export default function PlanItem({
         }}
       />
 
-      <div className="flex flex-col gap-2 truncate ">
+      <div className="flex flex-col truncate gap-2 ">
         <p className="text-2xl font-semibold truncate dark:text-white ">
           {label}
         </p>
