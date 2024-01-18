@@ -81,7 +81,7 @@ export default function Home() {
       <section className="mb-16">
         <header className="flex items-end justify-between mb-5">
           <h1 className="text-4xl font-semibold">Study Plan</h1>
-          <Link href="/studyplan" className="text-xl font-bold text-[#0A84FF]">
+          <Link href="/studyplan" className="text-xl font-bold text-themeBlue">
             See all
           </Link>
         </header>

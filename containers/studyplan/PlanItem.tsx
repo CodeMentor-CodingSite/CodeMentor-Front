@@ -19,12 +19,7 @@ export default function PlanItem({
         width={96}
         height={96}
         alt={`스터디 플랜 ${label} 이미지`}
-        style={{
-          borderRadius: '15px',
-          objectFit: 'cover',
-          width: '96px',
-          height: '96px',
-        }}
+        className="rounded-xl object-cover w-[96px] h-[96px]"
       />
 
       <div className="flex flex-col truncate gap-2 ">
