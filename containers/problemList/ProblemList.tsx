@@ -1,3 +1,6 @@
+'use client';
+
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import {
   IconTodo,
@@ -94,6 +97,8 @@ const problemItems = [
 ];
 
 export default function ProblemList() {
+  const { theme } = useTheme();
+
   return (
     <table className="w-full text-xl table-fixed">
       <colgroup>
@@ -118,9 +123,14 @@ export default function ProblemList() {
             <tr
               className="h-16 leading-16"
               style={
-                index % 2 === 0
-                  ? { backgroundColor: '#1A1A1A' }
-                  : { backgroundColor: '#2A2A2A' }
+                // eslint-disable-next-line no-nested-ternary
+                theme === 'dark'
+                  ? index % 2 === 0
+                    ? { backgroundColor: '#1A1A1A' }
+                    : { backgroundColor: '#2A2A2A' }
+                  : index % 2 === 0
+                    ? { backgroundColor: '#F4F4F5' }
+                    : { backgroundColor: '#ffffff' }
               }
             >
               <td style={{ paddingLeft: '12px' }}>
