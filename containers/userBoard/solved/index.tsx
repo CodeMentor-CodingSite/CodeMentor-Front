@@ -1,3 +1,3 @@
-import Solved from "@/containers/userBoard/solved/Solved";
+import Solved from "./Solved";
 
 export default Solved;

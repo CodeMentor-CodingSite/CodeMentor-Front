@@ -5,31 +5,32 @@
 @tailwind utilities;
 
 * {
-  font-family:
-    'Pretendard Variable',
-    Pretendard,
-    -apple-system,
-    BlinkMacSystemFont,
-    system-ui,
-    Roboto,
-    'Helvetica Neue',
-    'Segoe UI',
-    'Apple SD Gothic Neo',
-    'Noto Sans KR',
-    'Malgun Gothic',
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    sans-serif;
+    font-family:
+            'Pretendard Variable',
+            Pretendard,
+            -apple-system,
+            BlinkMacSystemFont,
+            system-ui,
+            Roboto,
+            'Helvetica Neue',
+            'Segoe UI',
+            'Apple SD Gothic Neo',
+            'Noto Sans KR',
+            'Malgun Gothic',
+            'Apple Color Emoji',
+            'Segoe UI Emoji',
+            'Segoe UI Symbol',
+            sans-serif;
 }
 
 @layer base {
-    [type='text'], input:where(:not([type])), [type='email'], [type='url'],
-    [type='password'], [type='number'], [type='date'], [type='datetime-local'],
-    [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'],
-    [multiple], textarea, select {
-        @apply flex-1 w-full bg-white dark:bg-inputDark placeholder-[#8DA4B1] dark:placeholder-inputTextDark border-1 border-[#CDD8DE]
-        dark:border-inputStrokeDark rounded-sm appearance-none focus:outline-none focus:border-none;
+    html {
+        @apply text-gray-800 dark:text-white;
     }
+
+    hr {
+        @apply border-t border-[#eee] my-[20px];
+    }
+
 }
 

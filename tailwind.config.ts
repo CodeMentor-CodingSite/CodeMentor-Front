@@ -1,5 +1,7 @@
 import type {Config} from 'tailwindcss'
 import {nextui} from '@nextui-org/react'
+import plugin from "tailwindcss/plugin";
+
 
 const config: Config = {
     content: [
@@ -17,10 +19,6 @@ const config: Config = {
                 borderDark: '#606060',
                 subtext: '#A3A3A3',
                 inactive: '#666666',
-                inputDark: '#3B3C3B',
-                inputStrokeDark:'#808587',
-                inputTextDark:'#879EA8',
-                formButtonDark:'#476370',
                 themeBlue: '#0070EF',
                 themeGreen: '#29C244',
                 themeRed: '#EF4643',
@@ -38,6 +36,39 @@ const config: Config = {
     plugins: [
         nextui(),
         require('@tailwindcss/forms'),
+        plugin(({ addComponents }) => {
+            addComponents({
+                ".customInput": {
+                    flex:'1',
+                    backgroundColor:'white',
+                    placeholder:'#8DA4B1',
+                    border:'1px solid #cdd8de',
+                    borderRadius:'8px',
+                    appearance:'none',
+                    '&:focus':{
+                        border:'none',
+                        outline:'none'
+                    }
+                },
+                ".dark .customInput":{
+                    backgroundColor:'#3B3C3B',
+                    placeholder:'#879EA8',
+                    border:'1px solid #808587',
+                    '&:focus':{
+                        border:'none',
+                        outline:'none'
+                    }
+                },
+                ".userBoardSection":{
+                    borderRadius:'8px',
+                    boxShadow:'0 0px 8px 1px rgba(0,0,0,.18)'
+                },
+                ".dark .userBoardSection":{
+                    backgroundColor:'#2A2A2A',
+                    boxShadow:'0 0px 8px 2px rgba(0,0,0,.5)'
+                }
+            });
+        }),
     ],
 }
 export default config
