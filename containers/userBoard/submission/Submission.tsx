@@ -134,7 +134,7 @@ function Submission() {
                                         {v.title}
                                     </td>
                                     <td
-                                        className={`whitespace-nowrap py-2.5 px-3 text-sm font-semibold 
+                                        className={`whitespace-nowrap py-2.5 px-3 text-sm font-bold 
                                                         ${v.status === 'Accepted' ? 
                                                                 'text-themeSuccess dark:text-themeSuccessDark'
                                                                 :'text-themeError dark:text-themeErrorDark'}`
@@ -157,7 +157,7 @@ function Submission() {
             </div>
             <Pagination
                 showControls
-                size="lg"
+                size="md"
                 total={5}
                 initialPage={1}
                 className="self-center h-[80px]"
