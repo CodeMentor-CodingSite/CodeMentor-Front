@@ -8,6 +8,9 @@ import IconSolution from './Solution';
 import IconAscendingOrder from './AscendingOrder';
 import IconDescendingOrder from './DescendingOrder';
 import IconUnordered from './Unordered';
+import IconArrowLeft from './ArrowLeft';
+import IconArrowRight from './ArrowRight';
+import IconRandomPick from './RandomPick';
 
 export {
   IconDarkMode,
@@ -20,4 +23,7 @@ export {
   IconAscendingOrder,
   IconDescendingOrder,
   IconUnordered,
+  IconArrowLeft,
+  IconArrowRight,
+  IconRandomPick,
 };
