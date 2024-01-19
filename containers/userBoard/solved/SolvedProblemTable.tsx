@@ -77,7 +77,7 @@ function SolvedProblemTable() {
                             <tr
                                 key={v.id}
                                 className="even:bg-[#F7F7F8] dark:even:bg-backgroundDark odd:bg-white
-                                                dark:odd:bg-componentDark dark:hover:bg-backgroundDark/85 cursor-pointer"
+                                                dark:odd:bg-componentDark hover:bg-gray-300/60 dark:hover:bg-backgroundDark/85 cursor-pointer"
                             >
                                 <td className="whitespace-nowrap py-2.5 px-3 text-sm font-medium dark:text-gray-300">
                                     {v.title}
