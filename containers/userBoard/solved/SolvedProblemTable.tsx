@@ -56,8 +56,8 @@ const solvedList = [
 function SolvedProblemTable() {
     return (
         <div className="px-4 flow-root grow">
-            <div className="-mx-6 -my-2 overflow-x-auto max-h-[300px]">
-                <div className="inline-block min-w-full py-2 align-middle px-6">
+            <div className="-mx-6 -my-2 max-h-[300px] overflow-y-auto">
+                <div className="inline-block min-w-full  px-6 py-2  align-middle ">
                     <table className="min-w-full">
                         <thead className='sticky top-0'>
                         <tr className='bg-[#f1f1f1] dark:bg-backgroundDark'>
