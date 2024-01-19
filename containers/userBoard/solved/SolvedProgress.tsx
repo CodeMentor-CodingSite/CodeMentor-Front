@@ -1,27 +1,27 @@
 import React from 'react';
 import SolvedProgressBar from "@/containers/userBoard/solved/SolvedProgressBar";
 
-const solvedProblems = [
+export const solvedProblems = [
     {
         level: 'easy',
-        count: 2,
-        total: 1700
+        count: 150,
+        total: 170
     },
     {
         level: 'medium',
-        count: 1,
-        total: 600
+        count: 10,
+        total: 60
     },
     {
         level: 'hard',
-        count: 1,
-        total: 400
+        count: 12,
+        total: 40
     }
 ];
 
 function SolvedProgress() {
     return (
-        <ul className='mt-[24px]'>
+        <ul className='mt-[24px] space-y-4'>
             {
                 solvedProblems.map((v) => (
                     <li key={v.level}>
