@@ -1,6 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import { useState, useCallback } from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -27,6 +28,12 @@ import capitalizeFirstChar from '@/utils/capitalizeFirstChar';
 
 export default function Header() {
   const pathname = usePathname();
+  const problemNum = parseInt(pathname.split('/')[2], 10);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const onClick = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
 
   return (
     <header className="h-16 mx-auto">
@@ -38,6 +45,8 @@ export default function Header() {
             : 'dark:bg-componentDark'
         } dark:border-borderDark`}
         isBordered={!pathname.startsWith('/problems')}
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
       >
         <NavbarBrand className="absolute left-[-128px]">
           <Link href="/">
@@ -56,24 +65,36 @@ export default function Header() {
             </NavbarItem>
             <NavbarItem>
               <Button
+                as={NextUILink}
                 isIconOnly
                 className="dark:bg-backgroundDark bg-background"
+                href={problemNum === 1 ? '' : `/problems/${problemNum - 1}`}
               >
                 <IconArrowLeft />
               </Button>
             </NavbarItem>
             <NavbarItem>
               <Button
+                as={NextUILink}
                 isIconOnly
                 className="dark:bg-backgroundDark bg-background"
+                href={
+                  problemNum === problemItems.length
+                    ? ''
+                    : `/problems/${problemNum + 1}`
+                }
               >
                 <IconArrowRight />
               </Button>
             </NavbarItem>
             <NavbarItem>
               <Button
+                as={NextUILink}
                 isIconOnly
                 className="dark:bg-backgroundDark bg-background"
+                href={`/problems/${Math.ceil(
+                  Math.random() * problemItems.length
+                )}`}
               >
                 <IconRandomPick />
               </Button>
@@ -82,19 +103,21 @@ export default function Header() {
         )}
 
         {pathname.startsWith('/problems') && (
-          <NavbarMenu className="dark:bg-componentDark w-[640px] pt-10 border-r dark:border-borderDark">
+          <NavbarMenu className="dark:bg-componentDark w-[640px] pt-10 border-r dark:border-borderDark shadow-xl">
             <div className="border dark:border-borderDark w-[582px] rounded-lg overflow-hidden">
               {problemItems.map(({ status, num, title, difficulty }, index) => (
                 <NavbarMenuItem
                   key={num}
                   className={`${index !== 9 && 'border-b'} ${
-                    pathname === `/problems/${num}` && 'dark:bg-[#3A3A3A]'
+                    pathname === `/problems/${num}` &&
+                    'dark:bg-[#3A3A3A] bg-[#F4F4F4] text-themeBlue font-bold'
                   } dark:border-borderDark w-[580px] py-2 h-12 px-4 `}
                   isActive={pathname !== `/problems/${num}`}
                 >
                   <Link
                     href={`/problems/${num}`}
                     className="relative text-base"
+                    onClick={onClick}
                   >
                     <div className="absolute left-0 top-1">
                       {/* eslint-disable-next-line no-nested-ternary */}

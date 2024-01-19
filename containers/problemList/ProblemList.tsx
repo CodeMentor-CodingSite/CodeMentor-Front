@@ -96,9 +96,6 @@ export const problemItems = [
 export default function ProblemList() {
   const bgOdd = 'bg-white dark:bg-componentDark';
   const bgEven = 'bg-[#F4F4F4] dark:bg-backgroundDark';
-  // theme === 'dark'
-  //   ? { backgroundColor: '#1A1A1A' }
-  //   : { backgroundColor: '#ffffff' };
 
   return (
     <div>
