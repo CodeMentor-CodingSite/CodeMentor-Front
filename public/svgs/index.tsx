@@ -11,6 +11,7 @@ import IconUnordered from './Unordered';
 import IconArrowLeft from './ArrowLeft';
 import IconArrowRight from './ArrowRight';
 import IconRandomPick from './RandomPick';
+import IconDot from './Dot';
 
 export {
   IconDarkMode,
@@ -26,4 +27,5 @@ export {
   IconArrowLeft,
   IconArrowRight,
   IconRandomPick,
+  IconDot,
 };
