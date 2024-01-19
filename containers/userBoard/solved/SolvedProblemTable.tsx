@@ -60,7 +60,7 @@ function SolvedProblemTable() {
                 <div className="inline-block min-w-full py-2 align-middle px-6">
                     <table className="min-w-full">
                         <thead className='sticky top-0'>
-                        <tr className='dark:bg-backgroundDark'>
+                        <tr className='bg-[#f1f1f1] dark:bg-backgroundDark'>
                             <th scope="col"
                                 className="py-3 pl-4 pr-3 text-left text-sm font-semibold">
                                 Name
@@ -83,7 +83,7 @@ function SolvedProblemTable() {
                                     {v.title}
                                 </td>
                                 <td
-                                    className="flex items-center space-x-1 whitespace-nowrap py-2.5 px-3
+                                    className="flex items-center justify-center space-x-1 whitespace-nowrap py-2.5 px-3
                                                         text-right text-sm font-medium text-[#949297]"
                                 >
                                     <span>{v.datePassed}</span>
