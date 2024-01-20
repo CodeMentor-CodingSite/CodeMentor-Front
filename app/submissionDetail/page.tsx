@@ -1,6 +1,12 @@
-import React from 'react';
-import Link from "next/link";
+'use client';
 
+import React, {useEffect, useState} from 'react';
+import Link from "next/link";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { coy, a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {useTheme} from "next-themes";
 
 function SubmissionDetailPage(
     {
@@ -8,6 +14,13 @@ function SubmissionDetailPage(
     }: {
         searchParams: Record<string, string | string[] | undefined>
     }) {
+    const [mounted, setMounted] = useState(false);
+    const { theme } = useTheme();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const problemId = searchParams.problemId as string;
 
     // todo - problemId로 submissionDetail 조회
@@ -15,12 +28,40 @@ function SubmissionDetailPage(
         status:'Compile Error',
         passedDate:'1 day, 23 hours',
         language:'java',
-        code: 'code',
+        code: 'class Solution {\n' +
+            '    public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n' +
+            '        int m = nums1.length;\n' +
+            '        int n = nums2.length;\n' +
+            '        List<Integer> ls = new ArrayList<>();\n' +
+            '        int i = 0, j = 0;\n' +
+            '        \n' +
+            '        while (i < m && j < n) {\n' +
+            '            if (nums1[i] < nums2[j]) {\n' +
+            '                ls.add(nums1[i++]);\n' +
+            '            } else {\n' +
+            '                ls.add(nums2[j++]);\n' +
+            '            }\n' +
+            '        }\n' +
+            '        \n' +
+            '        while (i < m) ls.add(nums1[i++]);\n' +
+            '        while (j < n) ls.add(nums2[j++]);\n' +
+            '\n' +
+            '        int mid = ls.size()/2;\n' +
+            '        if(ls.size() % 2 == 0){\n' +
+            '            return (ls.get(mid-1) + ls.get(mid))/2.0;\n' +
+            '        }else{\n' +
+            '            return ls.get(mid);\n' +
+            '        }\n' +
+            '    }\n' +
+            '}',
         errorMessage: 'Line 15: Char 71: error TS2355: A function whose declared type is neither \'undefined\', \'void\', nor \'any\' must return a value.'
     }
 
     // todo - edit code 버튼 클릭시 해당 문제 풀이 페이지로 이동 (?probelmId={problemId})
     console.log('problemId, ', problemId);
+
+    if(!mounted) return null;
+
     return (
         <section className='w-full flex flex-col space-y-[10px] px-1 pt-1'>
             <h1 className='px-1 text-[#1C78FF] text-[18px] font-semibold'>
@@ -74,7 +115,15 @@ function SubmissionDetailPage(
                         </Link>
                     </div>
                 </div>
-                <div>code area</div>
+                <SyntaxHighlighter
+                    style={theme === 'light' || theme === undefined ? coy : a11yDark}
+                    language={data.language}
+                    className="mockup-code scrollbar-thin scrollbar-track-base-content/5 scrollbar-thumb-base-content/40 scrollbar-track-rounded-md scrollbar-thumb-rounded"
+                    showLineNumbers
+                    useInlineStyles
+                >
+                    {data.code}
+                </SyntaxHighlighter>
             </section>
         </section>
     );
