@@ -10,7 +10,7 @@ import {
 } from '@/public/svgs';
 import capitalizeFirstChar from '@/utils/capitalizeFirstChar';
 
-const problemItems = [
+export const problemItems = [
   {
     status: 'todo',
     num: 1,
@@ -94,12 +94,6 @@ const problemItems = [
 ];
 
 export default function ProblemList() {
-  const bgOdd = 'bg-white dark:bg-componentDark';
-  const bgEven = 'bg-[#F4F4F4] dark:bg-backgroundDark';
-  // theme === 'dark'
-  //   ? { backgroundColor: '#1A1A1A' }
-  //   : { backgroundColor: '#ffffff' };
-
   return (
     <div>
       <table className="w-full text-xl table-fixed">
@@ -142,15 +136,10 @@ export default function ProblemList() {
         </thead>
         <tbody>
           {problemItems.map(
-            (
-              { status, num, title, solution, acceptance, difficulty },
-              index
-            ) => (
+            ({ status, num, title, solution, acceptance, difficulty }) => (
               <tr
                 key={num}
-                className={`${
-                  index % 2 === 0 ? bgEven : bgOdd
-                } h-16 leading-16`}
+                className="h-16 leading-16 odd:bg-white dark:odd:bg-componentDark even:bg-[#F4F4F4] dark:even:bg-backgroundDark"
               >
                 <td className="pl-5">
                   {/* eslint-disable-next-line no-nested-ternary */}

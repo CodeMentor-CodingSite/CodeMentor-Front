@@ -5,32 +5,30 @@
 @tailwind utilities;
 
 * {
-    font-family:
-            'Pretendard Variable',
-            Pretendard,
-            -apple-system,
-            BlinkMacSystemFont,
-            system-ui,
-            Roboto,
-            'Helvetica Neue',
-            'Segoe UI',
-            'Apple SD Gothic Neo',
-            'Noto Sans KR',
-            'Malgun Gothic',
-            'Apple Color Emoji',
-            'Segoe UI Emoji',
-            'Segoe UI Symbol',
-            sans-serif;
+  font-family:
+    'Pretendard Variable',
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    'Helvetica Neue',
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    sans-serif;
 }
 
 @layer base {
-    html {
-        @apply text-gray-800 dark:text-white;
-    }
+  html {
+    @apply text-gray-800 dark:text-white;
+  }
 
-    hr {
-        @apply border-t border-[#eee] my-[20px];
-    }
-
+  hr {
+    @apply border-t border-[#eee] my-[20px];
+  }
 }
-

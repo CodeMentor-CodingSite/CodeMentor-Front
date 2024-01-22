@@ -8,18 +8,24 @@ import IconSolution from './Solution';
 import IconAscendingOrder from './AscendingOrder';
 import IconDescendingOrder from './DescendingOrder';
 import IconUnordered from './Unordered';
-import IconDot from "./Dot";
+import IconArrowLeft from './ArrowLeft';
+import IconArrowRight from './ArrowRight';
+import IconRandomPick from './RandomPick';
+import IconDot from './Dot';
 
 export {
-    IconDarkMode,
-    IconLightMode,
-    IconSearch,
-    IconSolved,
-    IconAttempted,
-    IconTodo,
-    IconSolution,
-    IconAscendingOrder,
-    IconDescendingOrder,
-    IconUnordered,
-    IconDot
+  IconDarkMode,
+  IconLightMode,
+  IconSearch,
+  IconSolved,
+  IconAttempted,
+  IconTodo,
+  IconSolution,
+  IconAscendingOrder,
+  IconDescendingOrder,
+  IconUnordered,
+  IconArrowLeft,
+  IconArrowRight,
+  IconRandomPick,
+  IconDot,
 };
