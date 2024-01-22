@@ -9,7 +9,7 @@ function Languages() {
                 <ul className='flex'>
                     <li><Badge title='Java'/></li>
                 </ul>
-                <div className='ml-auto flex items-center'>
+                <div className='flex items-center ml-auto'>
                     <span className='px-1 font-semibold dark:text-gray-300/70'>2</span>
                     <span className='text-[#85858A]'>problem solved</span>
                 </div>

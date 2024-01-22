@@ -12,6 +12,8 @@ import IconArrowLeft from './ArrowLeft';
 import IconArrowRight from './ArrowRight';
 import IconRandomPick from './RandomPick';
 import IconDot from './Dot';
+import IconProblemDescription from './ProblemDescription';
+import IconProblemSolving from './ProblemSolving';
 
 export {
   IconDarkMode,
@@ -28,4 +30,6 @@ export {
   IconArrowRight,
   IconRandomPick,
   IconDot,
+  IconProblemDescription,
+  IconProblemSolving,
 };

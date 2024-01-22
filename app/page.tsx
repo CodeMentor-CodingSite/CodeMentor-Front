@@ -78,7 +78,7 @@ export const studyPlanItems = [
 export default function Home() {
   return (
     <>
-      <section className="mb-16">
+      <section className="my-16">
         <header className="flex items-end justify-between mb-5">
           <h1 className="text-4xl font-semibold">Study Plan</h1>
           <Link href="/studyplan" className="text-xl font-bold text-themeBlue">

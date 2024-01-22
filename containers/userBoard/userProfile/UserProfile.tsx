@@ -5,12 +5,12 @@ import defaultAvatar from '../../../public/defaultAvatar.png';
 
 function UserProfile() {
   return (
-      <div className='w-full flex flex-col'>
+      <div className='flex flex-col w-full'>
         <div className='flex mb-2'>
           <div className='relative' style={{width: '80px', height: '80px'}}>
             <Image src={defaultAvatar} alt='사용자 이미지' fill/>
           </div>
-          <div className='flex items-center space-x-1 mx-auto'>
+          <div className='flex items-center mx-auto space-x-1'>
             <span>test9864</span>
           </div>
         </div>

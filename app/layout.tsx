@@ -21,7 +21,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="h-full mx-auto my-16 w-desktop">{children}</main>
+          <main className="h-full mx-auto w-desktop">{children}</main>
           <Footer />
         </Providers>
       </body>
