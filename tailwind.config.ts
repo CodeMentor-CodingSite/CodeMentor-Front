@@ -23,6 +23,10 @@ const config: Config = {
                 themeGreen: '#29C244',
                 themeRed: '#EF4643',
                 themeYellow: '#F7BB1F',
+                themeError:'#E23A47',
+                themeErrorDark:'#DF454C',
+                themeSuccess:'#01AB49',
+                themeSuccessDark:'#009B3B'
             },
             width: {
                 desktop: '1280px',

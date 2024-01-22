@@ -56,17 +56,18 @@ const solvedList = [
 function SolvedProblemTable() {
     return (
         <div className="px-4 flow-root grow">
-            <div className="-mx-6 -my-2 overflow-x-auto max-h-[300px]">
-                <div className="inline-block min-w-full py-2 align-middle px-6">
+            <h3 className='pl-2 font-medium dark:text-gray-300/80'>Easy</h3>
+            <div className="-mx-6 max-h-[200px] overflow-y-auto">
+                <div className="inline-block min-w-full  px-6 py-2  align-middle ">
                     <table className="min-w-full">
                         <thead className='sticky top-0'>
                         <tr className='bg-[#f1f1f1] dark:bg-backgroundDark'>
                             <th scope="col"
-                                className="py-3 pl-4 pr-3 text-left text-sm font-semibold">
+                                className="py-2 pl-4 pr-3 text-left text-sm font-semibold">
                                 Name
                             </th>
                             <th scope="col"
-                                className="relative py-3 pl-3 pr-4 text-sm font-semibold">
+                                className="relative py-2 pl-3 pr-4 text-sm font-semibold">
                                 Submitted Time
                             </th>
                         </tr>
@@ -77,7 +78,7 @@ function SolvedProblemTable() {
                             <tr
                                 key={v.id}
                                 className="even:bg-[#F7F7F8] dark:even:bg-backgroundDark odd:bg-white
-                                                dark:odd:bg-componentDark dark:hover:bg-backgroundDark/85 cursor-pointer"
+                                                dark:odd:bg-componentDark hover:bg-gray-300/60 dark:hover:bg-backgroundDark/85 cursor-pointer"
                             >
                                 <td className="whitespace-nowrap py-2.5 px-3 text-sm font-medium dark:text-gray-300">
                                     {v.title}

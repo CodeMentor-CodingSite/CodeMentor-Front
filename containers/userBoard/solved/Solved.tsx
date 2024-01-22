@@ -5,9 +5,9 @@ import SolvedProblemTable from "@/containers/userBoard/solved/SolvedProblemTable
 
 function Solved() {
     return (
-        <section className='userBoardSection pt-[16px] pb-[12px]'>
+        <section className='userBoardSection pt-[16px] pb-[40px]'>
             <h2 className='font-semibold text-[18px] px-[13px]'>해결한 문제</h2>
-            <section className='flex items-stretch px-[32px] space-x-[20px]'>
+            <section className='flex items-stretch px-[32px] space-x-[30px]'>
                 <SolvedStatusPie/>
                 <SolvedProgress/>
                 <SolvedProblemTable/>
