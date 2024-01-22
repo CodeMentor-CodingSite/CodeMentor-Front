@@ -113,7 +113,11 @@ export default function ProblemCategory() {
             </SelectItem>
           )}
         </Select>
-        <Autocomplete defaultItems={TagsItems} label="Tags">
+        <Autocomplete
+          defaultItems={TagsItems}
+          label="Tags"
+          style={{ border: 'none' }}
+        >
           {({ label }) => (
             <AutocompleteItem key={label} value={label}>
               {capitalizeFirstChar(label)}
@@ -124,7 +128,7 @@ export default function ProblemCategory() {
           type="text"
           placeholder="Search questions"
           startContent={<IconSearch />}
-          style={{ width: '280px', fontSize: '16px' }}
+          style={{ width: '280px', fontSize: '16px', border: 'none' }}
         />
       </div>
 
