@@ -1,6 +1,8 @@
-import ProblemTemplate from '@/containers/problems/ProblemTemplate';
-import ProblemDescription from '@/containers/problems/ProblemDescription';
-import ProblemSolving from '@/containers/problems/ProblemSolving';
+import {
+  ProblemTemplate,
+  ProblemDescription,
+  ProblemSolving,
+} from '@/containers/problems';
 
 const problemDetailItems = [
   {
