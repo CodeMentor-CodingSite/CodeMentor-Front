@@ -35,7 +35,7 @@ export {
   IconArrowRight,
   IconRandomPick,
   IconDot,
-  IconBackToUserBoard
+  IconBackToUserBoard,
   IconProblemDescription,
   IconProblemSolving,
   IconThumbsDown,
