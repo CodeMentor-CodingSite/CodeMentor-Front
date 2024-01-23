@@ -14,10 +14,15 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
+                background: '#FFFFFF',
                 backgroundDark: '#1A1A1A',
+                component: '#F0F0F0',
                 componentDark: '#2A2A2A',
                 borderDark: '#606060',
-                subtext: '#A3A3A3',
+                subtext: '#737373',
+                subtextDark: '#A3A3A3',
+                chip: '#F0F0F0',
+                chipDark: '#3F3F3F',
                 inactive: '#666666',
                 themeBlue: '#0070EF',
                 themeGreen: '#29C244',

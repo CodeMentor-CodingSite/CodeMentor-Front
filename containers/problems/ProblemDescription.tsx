@@ -30,7 +30,7 @@ export default function ProblemDescription({
       <div className="flex flex-wrap gap-2 mt-6 mb-8">
         <Chip
           size="sm"
-          className={`h-5 text-sm font-medium ${
+          className={`h-5 text-sm font-medium bg-chip dark:bg-chipDark ${
             // eslint-disable-next-line no-nested-ternary
             difficulty === 'easy'
               ? 'text-themeGreen'
@@ -42,7 +42,10 @@ export default function ProblemDescription({
           {capitalizeFirstChar(difficulty)}
         </Chip>
         {tags.map((tag) => (
-          <Chip size="sm" className="h-5 text-sm font-medium">
+          <Chip
+            size="sm"
+            className="h-5 text-sm font-medium bg-chip dark:bg-chipDark"
+          >
             {capitalizeFirstChar(tag)}
           </Chip>
         ))}
@@ -63,15 +66,23 @@ export default function ProblemDescription({
             <h3 className="mb-2 text-lg font-semibold">Example {index + 1}:</h3>
             <div className="pl-3">
               <p>
-                Input: <span className="text-subtext">{input}</span>
+                Input:{' '}
+                <span className="text-subtext dark:text-subtextDark">
+                  {input}
+                </span>
               </p>
               <p>
-                Output: <span className="text-subtext">{output}</span>
+                Output:{' '}
+                <span className="text-subtext dark:text-subtextDark">
+                  {output}
+                </span>
               </p>
               {explanation !== undefined && (
                 <p>
                   Explanation:{' '}
-                  <span className="text-subtext">{explanation}</span>
+                  <span className="text-subtext dark:text-subtextDark">
+                    {explanation}
+                  </span>
                 </p>
               )}
             </div>
@@ -82,7 +93,9 @@ export default function ProblemDescription({
       <div className="mt-10">
         <h3 className="mb-2 text-lg font-semibold">Constraints:</h3>
         {constraints.map((constraint) => (
-          <p className="text-subtext">&bull; {constraint}</p>
+          <p className="text-subtext dark:text-subtextDark">
+            &bull; {constraint}
+          </p>
         ))}
       </div>
     </div>
