@@ -17,23 +17,23 @@ function Skills() {
     return (
         <section className='flex flex-col'>
             <h2 className='font-semibold text-[18px]'>Skills</h2>
-            <section className='flex flex-col space-y-4 my-3'>
+            <section className='flex flex-col my-3 space-y-4'>
                 <div>
-                    <div className='flex items-center space-x-1 font-semibold'>
+                    <div className='flex items-center font-semibold space-x-1'>
                         <IconDot width={10} height={10} r={2.5} color='#EF4643'/>
                         <span>Hard</span>
                     </div>
                     <SkillList/>
                 </div>
                 <div>
-                    <div className='flex items-center space-x-1 font-semibold'>
+                    <div className='flex items-center font-semibold space-x-1'>
                         <IconDot width={10} height={10} r={2.5} color='#F7BB1F' />
                         <span>Medium</span>
                     </div>
                     <SkillList/>
                 </div>
                 <div>
-                    <div className='flex items-center space-x-1 font-semibold'>
+                    <div className='flex items-center font-semibold space-x-1'>
                         <IconDot width={10} height={10} r={2.5} color='#29C244' />
                         <span>Easy</span>
                     </div>

@@ -8,7 +8,7 @@ function SkillList() {
             <ul className='flex flex-wrap my-3'>
                 {
                     skillList.map((v) => (
-                        <li className='flex my-1 mx-2' key={v.title}>
+                        <li className='flex mx-2 my-1' key={v.title}>
                             <Badge title={v.title}/>
                             <span className='text-[#85858A] font-medium'>&#215;{v.count}</span>
                         </li>

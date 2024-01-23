@@ -12,6 +12,12 @@ import IconArrowLeft from './ArrowLeft';
 import IconArrowRight from './ArrowRight';
 import IconRandomPick from './RandomPick';
 import IconDot from './Dot';
+import IconProblemDescription from './ProblemDescription';
+import IconProblemSolving from './ProblemSolving';
+import IconThumbsDown from './ThumbsDown';
+import IconThumbsUp from './ThumbsUp';
+import IconFavorites from './Favorites';
+import IconLink from './Link';
 
 export {
   IconDarkMode,
@@ -28,4 +34,10 @@ export {
   IconArrowRight,
   IconRandomPick,
   IconDot,
+  IconProblemDescription,
+  IconProblemSolving,
+  IconThumbsDown,
+  IconThumbsUp,
+  IconFavorites,
+  IconLink,
 };

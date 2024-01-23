@@ -74,5 +74,6 @@ const config: Config = {
             });
         }),
     ],
+    mode: "jit",
 }
 export default config
