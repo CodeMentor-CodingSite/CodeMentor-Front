@@ -12,7 +12,6 @@ function classNames(...classes: string[]) {
 }
 
 function Input({
-  id,
   label = '',
   disabled = false,
   errorMessage = '',
@@ -22,15 +21,15 @@ function Input({
     <div
       className={classNames(
         disabled ? 'opacity-50 pointer-events-none' : '',
-        'relative mobile:text-sm'
+        `relative mobile:text-sm ${props.className ? props.className : ''}`
       )}
     >
       {label !== '' && (
-        <label htmlFor={id} className="text-gray-700">
+        <label htmlFor={props.id} className="text-gray-700">
           {label}
         </label>
       )}
-      <input id={id} type="text" {...props} />
+      <input id={props.id} type="text" {...props} className='customInput'/>
       {errorMessage !== '' && (
         <p className="text-red-500 text-md">{errorMessage}</p>
       )}
