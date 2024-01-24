@@ -9,6 +9,7 @@ import {
   IconThumbsDown,
   IconFavorites,
   IconLink,
+  IconRefresh,
 } from '@/public/svgs';
 
 interface ProblemTemplateProps {
@@ -52,6 +53,12 @@ export default function ProblemTemplate({
                 Python
               </SelectItem>
             </Select>
+            <Button
+              isIconOnly
+              className="bg-[#F4F4F5] dark:bg-[#27272A] float-right"
+            >
+              <IconRefresh />
+            </Button>
           </div>
         )}
       </header>
