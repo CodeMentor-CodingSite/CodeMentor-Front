@@ -25,6 +25,10 @@ export default function ProblemTemplate({
 }: ProblemTemplateProps) {
   const [language, setLanguage] = useState(new Set(['Java']));
 
+  const onSelectionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setLanguage(new Set([e.target.value]));
+  };
+
   return (
     <section className="w-[636px]  dark:bg-componentDark rounded-xl overflow-hidden border dark:border-borderDark h-[calc(100%-88px)] flex flex-col">
       <header>
@@ -43,7 +47,7 @@ export default function ProblemTemplate({
               radius="none"
               className="h-9 w-28 absloute -top-1"
               selectedKeys={language}
-              onSelectionChange={setLanguage}
+              onChange={onSelectionChange}
               aria-label="코드 언어 선택하기"
             >
               <SelectItem key="Java" value="Java">
