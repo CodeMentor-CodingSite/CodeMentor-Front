@@ -288,7 +288,7 @@ export default function Problem({
 
   return (
     <div className="flex h-screen gap-2 mt-3">
-      <ProblemTemplate title="Description" svg="description">
+      <ProblemTemplate label="Description" svg="description">
         <ProblemDescription
           problemNum={problemNum}
           title={title}
@@ -299,7 +299,7 @@ export default function Problem({
           constraints={constraints}
         />
       </ProblemTemplate>
-      <ProblemTemplate title="Code" svg="solving">
+      <ProblemTemplate label="Code" svg="solving">
         <ProblemSolving id={id} />
       </ProblemTemplate>
     </div>

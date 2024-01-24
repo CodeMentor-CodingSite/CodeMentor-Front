@@ -1,6 +1,7 @@
 'use client';
 
-import { Button } from '@nextui-org/react';
+import { useState } from 'react';
+import { Button, Select, SelectItem } from '@nextui-org/react';
 import {
   IconProblemDescription,
   IconProblemSolving,
@@ -11,30 +12,53 @@ import {
 } from '@/public/svgs';
 
 interface ProblemTemplateProps {
-  title: string;
+  label: string;
   svg: string;
   children: React.ReactNode;
 }
 
 export default function ProblemTemplate({
-  title,
+  label,
   svg,
   children,
 }: ProblemTemplateProps) {
+  const [language, setLanguage] = useState(new Set(['Java']));
+
   return (
     <section className="w-[636px]  dark:bg-componentDark rounded-xl overflow-hidden border dark:border-borderDark h-[calc(100%-88px)] flex flex-col">
-      <header className="min-h-9 dark:bg-[#333333] flex font-semibold items-center px-3 gap-2 border-b dark:border-borderDark bg-[#FAFAFA]">
-        {svg === 'description' ? (
-          <IconProblemDescription />
-        ) : (
-          <IconProblemSolving />
+      <header>
+        <div className="min-h-9 dark:bg-[#333333] flex font-semibold items-center px-3 gap-2 border-b dark:border-borderDark bg-[#FAFAFA]">
+          {svg === 'description' ? (
+            <IconProblemDescription />
+          ) : (
+            <IconProblemSolving />
+          )}
+          <h1>{label}</h1>
+        </div>
+        {label === 'Code' && (
+          <div className="min-h-9 border-b dark:border-borderDark overflow-hidden relative bg-[#F4F4F5] dark:bg-[#27272A]">
+            <Select
+              size="sm"
+              radius="none"
+              className="h-9 w-28 absloute -top-1"
+              selectedKeys={language}
+              onSelectionChange={setLanguage}
+              aria-label="코드 언어 선택하기"
+            >
+              <SelectItem key="Java" value="Java">
+                Java
+              </SelectItem>
+              <SelectItem key="Python" value="Python">
+                Python
+              </SelectItem>
+            </Select>
+          </div>
         )}
-        <h1>{title}</h1>
       </header>
 
       <main className="px-4 py-5 overflow-y-scroll grow">{children}</main>
 
-      {title === 'Description' && (
+      {label === 'Description' && (
         <footer className="flex items-center justify-between gap-2 px-3 min-h-9">
           <div className="flex gap-2">
             <Button
