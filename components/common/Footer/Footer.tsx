@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="flex items-center h-16 mx-auto w-desktop gap-11">
       <p className="text-inactive">Copyright @ Code Mentor</p>
-      <ul className="flex mr-[44px] text-subtext gap-3">
+      <ul className="flex mr-[44px] text-subtext dark:text-subtextDark gap-3">
         <li className="flex items-center gap-3">
           <p>724thomas</p>
           <Divider orientation="vertical" className="h-4 bg-subtext" />

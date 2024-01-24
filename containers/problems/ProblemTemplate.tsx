@@ -22,8 +22,8 @@ export default function ProblemTemplate({
   children,
 }: ProblemTemplateProps) {
   return (
-    <section className="w-[636px] dark:bg-componentDark rounded-xl overflow-hidden border dark:border-borderDark h-[calc(100%-88px)] flex flex-col">
-      <header className="min-h-9 dark:bg-[#333333] flex font-semibold items-center px-3 gap-2 border-b dark:border-borderDark">
+    <section className="w-[636px]  dark:bg-componentDark rounded-xl overflow-hidden border dark:border-borderDark h-[calc(100%-88px)] flex flex-col">
+      <header className="min-h-9 dark:bg-[#333333] flex font-semibold items-center px-3 gap-2 border-b dark:border-borderDark bg-[#FAFAFA]">
         {svg === 'description' ? (
           <IconProblemDescription />
         ) : (
@@ -40,19 +40,23 @@ export default function ProblemTemplate({
             <Button
               startContent={<IconThumbsUp />}
               size="sm"
-              className="h-6 text-base font-medium text-subtext"
+              className="h-6 text-base font-medium text-subtext dark:text-subtextDark bg-component dark:bg-chipDark"
             >
               23.6K
             </Button>
-            <Button size="sm" isIconOnly className="h-6">
+            <Button
+              size="sm"
+              isIconOnly
+              className="h-6 bg-component dark:bg-chipDark"
+            >
               <IconThumbsDown />
             </Button>
           </div>
           <div>
-            <Button isIconOnly variant="light" className="h-6 ">
+            <Button isIconOnly variant="light" className="h-6">
               <IconFavorites />
             </Button>
-            <Button isIconOnly variant="light" className="h-6 ">
+            <Button isIconOnly variant="light" className="h-6">
               <IconLink />
             </Button>
           </div>
