@@ -98,11 +98,11 @@ export default function ProblemTemplate({
         </footer>
       )}
 
-      {/* {label === 'Code' && (
+      {label === 'Code' && (
         <p className="text-right pr-4 h-6 text-sm text-subtext dark:text-subtextDark">
           Ln 1, Col 1
         </p>
-      )} */}
+      )}
     </section>
   );
 }
