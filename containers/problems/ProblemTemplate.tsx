@@ -15,12 +15,14 @@ import {
 interface ProblemTemplateProps {
   label: string;
   svg: string;
+  height: string;
   children: React.ReactNode;
 }
 
 export default function ProblemTemplate({
   label,
   svg,
+  height,
   children,
 }: ProblemTemplateProps) {
   const [language, setLanguage] = useState(new Set(['Java']));
@@ -30,7 +32,9 @@ export default function ProblemTemplate({
   };
 
   return (
-    <section className="w-[636px]  dark:bg-componentDark rounded-xl overflow-hidden border dark:border-borderDark h-[calc(100%-88px)] flex flex-col">
+    <section
+      className={`${height} w-[636px]  dark:bg-componentDark rounded-xl overflow-hidden border dark:border-borderDark flex flex-col`}
+    >
       <header>
         <div className="min-h-9 dark:bg-[#333333] flex font-semibold items-center px-3 gap-2 border-b dark:border-borderDark bg-[#FAFAFA]">
           {svg === 'description' ? (
