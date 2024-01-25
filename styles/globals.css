@@ -24,9 +24,7 @@
 }
 
 @layer base {
-    html {
-        @apply text-gray-800 dark:text-white;
-    }
-
+  html {
+    @apply text-gray-800 dark:text-white;
+  }
 }
-

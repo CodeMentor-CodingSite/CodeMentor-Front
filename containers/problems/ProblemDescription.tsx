@@ -27,7 +27,7 @@ export default function ProblemDescription({
   return (
     <div>
       <h2 className="text-2xl font-semibold">{`${problemNum}. ${title}`}</h2>
-      <div className="flex flex-wrap gap-2 mt-6 mb-8">
+      <div className="flex flex-wrap mt-6 mb-8 gap-2">
         <Chip
           size="sm"
           className={`h-5 text-sm font-medium bg-chip dark:bg-chipDark ${
@@ -60,7 +60,7 @@ export default function ProblemDescription({
           ))}
       </div>
 
-      <div className="flex flex-col gap-6 mt-20">
+      <div className="flex flex-col mt-20 gap-6">
         {examples.map(({ input, output, explanation }, index) => (
           <div>
             <h3 className="mb-2 text-lg font-semibold">Example {index + 1}:</h3>

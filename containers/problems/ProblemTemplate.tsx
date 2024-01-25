@@ -70,7 +70,7 @@ export default function ProblemTemplate({
       <main className="px-4 py-5 overflow-y-scroll grow">{children}</main>
 
       {label === 'Description' && (
-        <footer className="flex items-center justify-between gap-2 px-3 min-h-9">
+        <footer className="flex items-center justify-between px-3 gap-2 min-h-9">
           <div className="flex gap-2">
             <Button
               startContent={<IconThumbsUp />}
@@ -97,6 +97,12 @@ export default function ProblemTemplate({
           </div>
         </footer>
       )}
+
+      {/* {label === 'Code' && (
+        <p className="text-right pr-4 h-6 text-sm text-subtext dark:text-subtextDark">
+          Ln 1, Col 1
+        </p>
+      )} */}
     </section>
   );
 }

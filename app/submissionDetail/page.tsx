@@ -67,7 +67,7 @@ function SubmissionDetailPage(
             <h1 className='px-1 text-[#1C78FF] text-[18px] font-semibold'>
                 Leaf-Similar Trees
             </h1>
-            <section className='w-full flex flex-col px-1 py-1'>
+            <section className='flex flex-col w-full px-1 py-1'>
                 <h2 className='text-[24px] font-semibld'>Submission Detail</h2>
                 <div className='w-full flex flex-col items-end space-y-[10px] pt-[12px] pr-[20px] pb-[15px] border border-[#ddd]'>
                     <div className='flex items-center space-x-1 pt-[8px] pr-[13px] pb-[8px] pl-[8px] dark:bg-stone-800/80'>
@@ -97,12 +97,12 @@ function SubmissionDetailPage(
                     </div>
                 }
                 <hr className='mt-[20px] mb-[12px] border-t border-[#ddd]'/>
-                <div className='flex flex-col space-y-1 mb-2'>
-                    <div className='w-full flex items-center space-x-1 font-medium'>
+                <div className='flex flex-col mb-2 space-y-1'>
+                    <div className='flex items-center w-full font-medium space-x-1'>
                         <span className='text-[20px]'>Submitted Code:</span>
                         <span className='text-md'>{data.passedDate}</span>
                     </div>
-                    <div className='w-full flex justify-between'>
+                    <div className='flex justify-between w-full'>
                         <span className='text-md text-[#595959] dark:text-[#a6a6a6] font-semibold '>
                             Language: {data.language}
                         </span>
