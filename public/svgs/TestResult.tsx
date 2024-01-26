@@ -1,4 +1,4 @@
-export default function IconTestResult() {
+export default function IconTestResult({ opacity }: { opacity: boolean }) {
   return (
     <svg
       width="20"
@@ -13,7 +13,7 @@ export default function IconTestResult() {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        // strokeOpacity="0.5"
+        strokeOpacity={opacity ? '0.5' : 'none'}
       />
       <path
         d="M8.82495 11.1167H12.3583V7.58337"
@@ -21,7 +21,7 @@ export default function IconTestResult() {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        // strokeOpacity="0.5"
+        strokeOpacity={opacity ? '0.5' : 'none'}
       />
       <path
         d="M12.3583 11.1167L7.6416 6.40002"
@@ -29,7 +29,7 @@ export default function IconTestResult() {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        // strokeOpacity="0.5"
+        strokeOpacity={opacity ? '0.5' : 'none'}
       />
       <path
         d="M5 13.7583C8.24167 14.8416 11.7583 14.8416 15 13.7583"
@@ -37,7 +37,7 @@ export default function IconTestResult() {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        // strokeOpacity="0.5"
+        strokeOpacity={opacity ? '0.5' : 'none'}
       />
     </svg>
   );

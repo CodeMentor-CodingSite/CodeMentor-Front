@@ -6,6 +6,7 @@ import {
   IconTestCase,
   IconTestResult,
   IconAscendingOrder,
+  IconDescendingOrder,
 } from '@/public/svgs';
 import CaseComponent from './CaseComponent';
 import ResultComponent from './ResultComponent';
@@ -51,15 +52,15 @@ export default function ProblemTest() {
 
   return (
     <section
-      className={`${spread ? 'h-screnn' : 'h-9'} bg-component dark:bg-componentDark w-[636px] rounded-xl border dark:border-borderDark overflow-hidden flex flex-col`}
+      className={`${spread ? 'h-full' : 'h-9'} dark:bg-componentDark w-[636px] rounded-xl border dark:border-borderDark overflow-hidden flex flex-col`}
     >
       <h1
         className={`h-9 flex justify-between items-center dark:bg-[#333333] bg-[#FAFAFA] ${spread ? 'border-b dark:border-borderDark' : ''}`}
       >
         <div className="flex items-center ">
           <Button
-            startContent={<IconTestCase />}
-            className="flex items-center gap-2 bg-transparent"
+            startContent={<IconTestCase opacity={!isCase} />}
+            className={`${isCase ? '' : 'text-opacity-50'} bg-transparent`}
             onClick={onClickTestCase}
           >
             <p>Test Case</p>
@@ -68,8 +69,8 @@ export default function ProblemTest() {
           <Divider className="w-[1px] h-6" />
 
           <Button
-            startContent={<IconTestResult />}
-            className="flex items-center gap-2 bg-transparent"
+            startContent={<IconTestResult opacity={isCase} />}
+            className={`${!isCase ? '' : 'text-opacity-50'} bg-transparent`}
             onClick={onClickTestResult}
           >
             <p>Test Result</p>
@@ -77,7 +78,7 @@ export default function ProblemTest() {
         </div>
 
         <Button isIconOnly className="bg-transparent" onClick={onClickSpread}>
-          <IconAscendingOrder />
+          {spread ? <IconDescendingOrder /> : <IconAscendingOrder />}
         </Button>
       </h1>
 

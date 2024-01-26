@@ -103,7 +103,7 @@ export default function ProblemTemplate({
       )}
 
       {label === 'Code' && (
-        <p className="text-right pr-4 h-6 text-sm text-subtext dark:text-subtextDark">
+        <p className="h-6 pr-4 text-sm text-right text-subtext dark:text-subtextDark">
           Ln 1, Col 1
         </p>
       )}

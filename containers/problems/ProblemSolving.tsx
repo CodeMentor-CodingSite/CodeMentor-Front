@@ -34,7 +34,7 @@ export default function ProblemSolving({ id }: { id: string }) {
       <div>
         <textarea
           onChange={onChangeTextarea}
-          className="absolute z-10 w-full h-full bg-transparent border-none resize-none focus:ring-0 text-transparent"
+          className="absolute z-10 w-full h-full text-transparent bg-transparent border-none resize-none focus:ring-0"
         />
       </div>
       <div>

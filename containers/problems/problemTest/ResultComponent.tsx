@@ -8,10 +8,10 @@ export default function ResultComponent({ values }: ResultComponentProps) {
   return (
     <div className="flex flex-col gap-2">
       <div>
-        <p className="text-subtext dark:text-subtextDark mb-1">Input</p>
+        <p className="mb-1 text-subtext dark:text-subtextDark">Input</p>
         <div className="flex flex-col gap-2">
           {inputs.map((input) => (
-            <div className="bg-chip dark:bg-chipDark rounded-lg px-4 py-3">
+            <div className="px-4 py-3 rounded-lg bg-chip dark:bg-chipDark">
               {input}
             </div>
           ))}
@@ -19,15 +19,15 @@ export default function ResultComponent({ values }: ResultComponentProps) {
       </div>
 
       <div>
-        <p className="text-subtext dark:text-subtextDark mb-1">Output</p>
-        <div className="bg-chip dark:bg-chipDark rounded-lg px-4 py-3">
+        <p className="mb-1 text-subtext dark:text-subtextDark">Output</p>
+        <div className="px-4 py-3 rounded-lg bg-chip dark:bg-chipDark">
           {output}
         </div>
       </div>
 
       <div>
-        <p className="text-subtext dark:text-subtextDark mb-1">Expected</p>
-        <div className="bg-chip dark:bg-chipDark rounded-lg px-4 py-3">
+        <p className="mb-1 text-subtext dark:text-subtextDark">Expected</p>
+        <div className="px-4 py-3 rounded-lg bg-chip dark:bg-chipDark">
           {expected}
         </div>
       </div>

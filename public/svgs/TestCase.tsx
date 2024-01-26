@@ -1,4 +1,4 @@
-export default function IconTestCase() {
+export default function IconTestCase({ opacity }: { opacity: boolean }) {
   return (
     <svg
       width="20"
@@ -13,7 +13,7 @@ export default function IconTestCase() {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        // strokeOpacity="0.5"
+        strokeOpacity={opacity ? '0.5' : 'none'}
       />
       <path
         d="M7.05835 8.86664L10 11.8L12.9417 8.86664"
@@ -21,7 +21,7 @@ export default function IconTestCase() {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        // strokeOpacity="0.5"
+        strokeOpacity={opacity ? '0.5' : 'none'}
       />
     </svg>
   );
