@@ -21,6 +21,7 @@ import IconLink from './Link';
 import IconRefresh from './Refresh';
 import IconTestCase from './TestCase';
 import IconTestResult from './TestResult';
+import IconBackToUserBoard from './IconBackToUserBoard';
 
 export {
   IconDarkMode,
@@ -37,6 +38,7 @@ export {
   IconArrowRight,
   IconRandomPick,
   IconDot,
+  IconBackToUserBoard,
   IconProblemDescription,
   IconProblemSolving,
   IconThumbsDown,
