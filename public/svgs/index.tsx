@@ -19,6 +19,8 @@ import IconThumbsUp from './ThumbsUp';
 import IconFavorites from './Favorites';
 import IconLink from './Link';
 import IconRefresh from './Refresh';
+import IconTestCase from './TestCase';
+import IconTestResult from './TestResult';
 
 export {
   IconDarkMode,
@@ -42,4 +44,6 @@ export {
   IconFavorites,
   IconLink,
   IconRefresh,
+  IconTestCase,
+  IconTestResult,
 };

@@ -2,6 +2,7 @@ import {
   ProblemTemplate,
   ProblemDescription,
   ProblemSolving,
+  ProblemTest,
 } from '@/containers/problems';
 
 const problemDetailItems = [
@@ -311,9 +312,7 @@ export default function Problem({
         >
           <ProblemSolving id={id} />
         </ProblemTemplate>
-        <section className="h-9 bg-component dark:bg-componentDark w-[636px] rounded-xl border dark:border-borderDark">
-          Test
-        </section>
+        <ProblemTest />
       </div>
     </div>
   );
