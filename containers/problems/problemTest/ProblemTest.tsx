@@ -8,6 +8,7 @@ import {
   IconAscendingOrder,
 } from '@/public/svgs';
 import CaseComponent from './CaseComponent';
+import ResultComponent from './ResultComponent';
 
 const caseItems = [
   {
@@ -31,58 +32,99 @@ const caseItems = [
 ];
 
 export default function ProblemTest() {
-  const [toggle, setToggle] = useState(false);
-  const [selected, setSelected] = useState('1');
+  const [isCase, setIsCase] = useState(true);
+  const [spread, setSpread] = useState(false);
+  const [selectedCase, setSelectedCase] = useState('1');
+  const [selectedResult, setSelectedResult] = useState('1');
 
-  const onClickToggle = useCallback(() => {
-    setToggle(!toggle);
-  }, [toggle]);
+  const onClickSpread = useCallback(() => {
+    setSpread(!spread);
+  }, [spread]);
+
+  const onClickTestCase = useCallback(() => {
+    setIsCase(true);
+  }, []);
+
+  const onClickTestResult = useCallback(() => {
+    setIsCase(false);
+  }, []);
 
   return (
     <section
-      className={`${toggle ? 'h-[calc(100%-52px)]' : 'h-9'} bg-component dark:bg-componentDark w-[636px] rounded-xl border dark:border-borderDark overflow-hidden`}
+      className={`${spread ? 'h-screnn' : 'h-9'} bg-component dark:bg-componentDark w-[636px] rounded-xl border dark:border-borderDark overflow-hidden flex flex-col`}
     >
       <h1
-        className={`h-9 flex justify-between items-center pl-3 dark:bg-[#333333] bg-[#FAFAFA] ${toggle ? 'border-b dark:border-borderDark' : ''}`}
+        className={`h-9 flex justify-between items-center dark:bg-[#333333] bg-[#FAFAFA] ${spread ? 'border-b dark:border-borderDark' : ''}`}
       >
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <IconTestCase />
+        <div className="flex items-center ">
+          <Button
+            startContent={<IconTestCase />}
+            className="flex items-center gap-2 bg-transparent"
+            onClick={onClickTestCase}
+          >
             <p>Test Case</p>
-          </div>
+          </Button>
 
           <Divider className="w-[1px] h-6" />
 
-          <div className="flex items-center gap-2">
-            <IconTestResult />
+          <Button
+            startContent={<IconTestResult />}
+            className="flex items-center gap-2 bg-transparent"
+            onClick={onClickTestResult}
+          >
             <p>Test Result</p>
-          </div>
+          </Button>
         </div>
 
-        <Button isIconOnly className="bg-transparent" onClick={onClickToggle}>
+        <Button isIconOnly className="bg-transparent" onClick={onClickSpread}>
           <IconAscendingOrder />
         </Button>
       </h1>
 
-      <div className="p-6">
-        <Tabs
-          key="1"
-          variant="light"
-          aria-label="Tabs variants"
-          selectedKey={selected}
-          onSelectionChange={setSelected}
-        >
-          {caseItems.map(({ key, title, values }) => (
-            <Tab key={key} title={title}>
-              {values.inputs.map((input) => (
-                <CaseComponent
-                  left={input.split(' = ')[0]}
-                  right={input.split(' = ')[1]}
-                />
-              ))}
-            </Tab>
-          ))}
-        </Tabs>
+      <div className="p-6 overflow-y-scroll">
+        {isCase ? (
+          <Tabs
+            key="1"
+            variant="light"
+            aria-label="Tabs variants"
+            selectedKey={selectedCase}
+            onSelectionChange={setSelectedCase}
+          >
+            {caseItems.map(({ key, title, values }) => (
+              <Tab key={key} title={title}>
+                {values.inputs.map((input) => (
+                  <CaseComponent
+                    left={input.split(' = ')[0]}
+                    right={input.split(' = ')[1]}
+                  />
+                ))}
+              </Tab>
+            ))}
+          </Tabs>
+        ) : (
+          <Tabs
+            key="1"
+            variant="light"
+            aria-label="Tabs variants"
+            selectedKey={selectedResult}
+            onSelectionChange={setSelectedResult}
+          >
+            {caseItems.map(({ key, title, values }) => {
+              const isRight = values.expected === values.output;
+
+              return (
+                <Tab key={key} title={title}>
+                  <h2
+                    className={`mb-4 font-bold ${isRight ? 'text-themeGreen' : 'text-themeRed'}`}
+                  >
+                    {isRight ? 'Accepted' : 'Wrong Answer'}
+                  </h2>
+                  <ResultComponent values={values} />
+                </Tab>
+              );
+            })}
+          </Tabs>
+        )}
       </div>
     </section>
   );
