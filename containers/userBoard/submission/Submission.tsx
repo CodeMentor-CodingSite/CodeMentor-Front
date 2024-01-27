@@ -89,24 +89,24 @@ function Submission() {
             <h2 className='font-semibold text-[18px] px-[13px]'>Submission</h2>
             <div className="mt-[24px] mb-[30px] px-4 flow-root grow">
                 <div className="-mx-6 -my-2">
-                    <div className="inline-block min-w-full  px-6 py-2  align-middle ">
+                    <div className="inline-block min-w-full px-6 py-2 align-middle ">
                         <table className="min-w-full">
                             <thead>
                             <tr className='bg-[#f1f1f1] dark:bg-backgroundDark'>
                                 <th scope="col"
-                                    className="py-3 pl-4 pr-3 text-left text-sm font-semibold">
+                                    className="py-3 pl-4 pr-3 text-sm font-semibold text-left">
                                     Time Submitted
                                 </th>
                                 <th scope="col"
-                                    className="py-3 px-3 text-left text-sm font-semibold">
+                                    className="px-3 py-3 text-sm font-semibold text-left">
                                     Title
                                 </th>
                                 <th scope="col"
-                                    className="py-3 px-3 text-left text-sm font-semibold">
+                                    className="px-3 py-3 text-sm font-semibold text-left">
                                     Status
                                 </th>
                                 <th scope="col"
-                                    className="py-3 px-3 text-left text-sm font-semibold">
+                                    className="px-3 py-3 text-sm font-semibold text-left">
                                     Runtime
                                 </th>
                                 <th scope="col"

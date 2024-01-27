@@ -58,13 +58,13 @@ function SolvedProblemTable() {
     <div className="px-4 flow-root grow">
       <h3 className="pl-2 font-medium dark:text-gray-300/80">Easy</h3>
       <div className="-mx-6 max-h-[200px] overflow-y-auto">
-        <div className="inline-block min-w-full  px-6 py-2  align-middle ">
+        <div className="inline-block min-w-full px-6 py-2 align-middle ">
           <table className="min-w-full">
             <thead className="sticky top-0">
               <tr className="bg-[#f1f1f1] dark:bg-backgroundDark">
                 <th
                   scope="col"
-                  className="py-2 pl-4 pr-3 text-left text-sm font-semibold"
+                  className="py-2 pl-4 pr-3 text-sm font-semibold text-left"
                 >
                   Name
                 </th>

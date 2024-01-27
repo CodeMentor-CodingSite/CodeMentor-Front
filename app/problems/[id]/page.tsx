@@ -2,6 +2,7 @@ import {
   ProblemTemplate,
   ProblemDescription,
   ProblemSolving,
+  ProblemTest,
 } from '@/containers/problems';
 
 const problemDetailItems = [
@@ -287,8 +288,12 @@ export default function Problem({
   } = problemDetailItems[parseInt(id, 10) - 1];
 
   return (
-    <div className="flex h-screen gap-2 mt-3">
-      <ProblemTemplate title="Description" svg="description">
+    <div className="flex h-screen mt-3 gap-2">
+      <ProblemTemplate
+        label="Description"
+        svg="description"
+        height="h-[calc(100%-88px)]"
+      >
         <ProblemDescription
           problemNum={problemNum}
           title={title}
@@ -299,9 +304,12 @@ export default function Problem({
           constraints={constraints}
         />
       </ProblemTemplate>
-      <ProblemTemplate title="Code" svg="solving">
-        <ProblemSolving id={id} />
-      </ProblemTemplate>
+      <div className="flex flex-col gap-2 h-[calc(100%-88px)]">
+        <ProblemTemplate label="Code" svg="solving" height="h-full">
+          <ProblemSolving id={id} />
+        </ProblemTemplate>
+        <ProblemTest />
+      </div>
     </div>
   );
 }
