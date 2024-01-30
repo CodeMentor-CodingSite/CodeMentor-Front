@@ -18,25 +18,25 @@ function SignUpPage() {
               type='text'
               placeholder='닉네임'
               errorMessage=''
-              className='w-full customInput'
+              className='w-full'
           />
           <Input
               type='password'
               placeholder='비밀번호'
               errorMessage=''
-              className='w-full customInput'
+              className='w-full'
           />
           <Input
               type='password'
               placeholder='비밀번호 확인'
               errorMessage=''
-              className='w-full customInput'
+              className='w-full'
           />
           <Input
               type='email'
               placeholder='이메일 주소'
               errorMessage=''
-              className='w-full customInput'
+              className='w-full'
           />
 
           <Button
