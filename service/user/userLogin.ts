@@ -1,7 +1,6 @@
 'use server';
 
-import { validateEmail, validateNickname} from "@/utils/formValidation";
-import {validatePassword} from "@/utils/formValidation/formValidation";
+import { validateEmail, validateNickname, validatePassword} from "@/utils/formValidation";
 import {request} from "@/service/user/index";
 
 export default async function userLogin(prevState: any, formData: FormData) {
