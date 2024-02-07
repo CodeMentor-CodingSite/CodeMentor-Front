@@ -41,7 +41,11 @@ export default async function register(prevState: any, formData: FormData) {
     }
 
     const response = await request('/api/user/register', 'POST', {nickname, email, password});
+
+    if (response.ok) {
+        return {result: 'success', name: '', message: '회원가입이 완료 되었습니다.'};
+    }
+
     const data = await response.json();
-    console.log("in user, data: ",data);
-    return data;
+    return {result: 'fail', name: '', message: data.errorMessage};
 }

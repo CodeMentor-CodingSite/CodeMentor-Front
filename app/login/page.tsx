@@ -4,17 +4,43 @@ import React from 'react';
 import {useFormState} from "react-dom";
 import {Button} from "@nextui-org/react";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
+import {useSetRecoilState} from "recoil";
 import Input from "@/components/common/Form";
 import Logo from "@/components/common/Header/Logo";
 import {userLogin} from "@/service/user";
+import globalSnackbarStateStore from "@/store/GlobalSnackbarStateStore";
+import {type FormActionState} from "@/utils/type";
 
-const initialState = {
+const initialState: FormActionState = {
+    result: '',
     message: '',
     name: ''
 };
 
+
 function LoginPage() {
+    const router = useRouter();
+    const setGlobalSnackbar = useSetRecoilState(globalSnackbarStateStore);
     const [state, formAction] = useFormState(userLogin, initialState);
+
+    if (state.result === 'success') {
+        router.back();
+        router.refresh();
+
+        setGlobalSnackbar({show: true, type: 'SUCCESS', message: state.message, duration:4000});
+        state.result = '';
+        state.name = '';
+        state.message = '';
+    }
+
+    if (state.result === 'fail') {
+        setGlobalSnackbar({show: true, type: 'ERROR', message: state.message, duration: 4000});
+        state.result = '';
+        state.name = '';
+        state.message = '';
+    }
+
 
     return (
         <div className='w-fit min-h-[460px] mx-auto p-[20px] flex flex-col items-center space-y-[20px]
@@ -25,21 +51,35 @@ function LoginPage() {
                 action={formAction}
                 className='min-w-[340px] flex flex-col space-y-[20px]'
             >
-                <Input
-                    type='text'
-                    name='usernameOrEmail'
-                    placeholder='닉네임 혹은 이메일'
-                    errorMessage=''
-                    className='w-full customInput'
-                />
-                <Input
-                    type='password'
-                    name='userPassword'
-                    placeholder='비밀번호'
-                    errorMessage=''
-                    className='w-full customInput'
-                />
+                <div className='flex flex-col space-y-2'>
+
+                    <Input
+                        type='email'
+                        name='email'
+                        placeholder='닉네임 혹은 이메일'
+                        errorMessage=''
+                        className='w-full customInput'
+                    />
+                    {
+                        state.name === 'email' &&
+                        <span className='pl-2 text-sm text-themeError'>{state.message}</span>
+                    }
+                </div>
+                <div className='flex flex-col space-y-2'>
+                    <Input
+                        type='password'
+                        name='password'
+                        placeholder='비밀번호'
+                        errorMessage=''
+                        className='w-full customInput'
+                    />
+                    {
+                        state.name === 'password' &&
+                        <span className='pl-2 text-sm text-themeError'>{state.message}</span>
+                    }
+                </div>
                 <Button
+                    type='submit'
                     size='lg'
                     radius='sm'
                     className='bg-[#486471] dark:bg-[#476370] text-xl text-white'
