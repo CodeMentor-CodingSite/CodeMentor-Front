@@ -3,25 +3,10 @@
 import {cookies} from "next/headers";
 import {type ResponseCookie} from "next/dist/compiled/@edge-runtime/cookies";
 import {validateEmail, validateNickname, validatePassword} from "@/utils/formValidation";
+import getTokenAndOptionsFromCookie from "@/utils/getTokenAndOptionsFromCookie";
 
 const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-function getTokenAndOptionsFromCookie(cookieStr: string, tokenName: string) {
-    const cookieStrArr = cookieStr.trim().split(";");
-    const token = cookieStrArr.find(v => v.includes(tokenName))?.split("=")[1];
-    const options = cookieStrArr.filter(v => !v.includes(tokenName));
-
-    const option: Record<string, string> = {};
-    // eslint-disable-next-line no-restricted-syntax
-    for (const item of options) {
-        const strArr = item.split("=");
-        const key = strArr[0];
-        const value = strArr[1];
-        option[key] = value;
-    }
-
-    return {token, options};
-}
 
 export default async function userLogin(prevState: any, formData: FormData) {
     const email = formData.get('email') as string;
