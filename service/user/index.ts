@@ -1,6 +1,6 @@
 import register from "@/service/user/register";
 import userLogin from "@/service/user/userLogin";
-import {request, routeRequest} from "@/service/requestWrapper";
+import request from "@/service/request";
 
 
-export {request, routeRequest, register, userLogin};
+export {request, register, userLogin};

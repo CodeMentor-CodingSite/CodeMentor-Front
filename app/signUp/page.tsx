@@ -4,18 +4,33 @@ import React from 'react';
 import {useFormState} from 'react-dom';
 import {Button} from "@nextui-org/react";
 import Link from "next/link";
+import {useSetRecoilState} from "recoil";
+import {useRouter} from "next/navigation";
 import Input from "@/components/common/Form";
 import Logo from "@/components/common/Header/Logo";
 import {register} from "@/service/user";
+import globalSnackbarStateStore from "@/store/GlobalSnackbarStateStore";
 
 const initialState = {
+    result:'',
     name:'',
     message:''
 }
 function SignUpPage() {
+    const router = useRouter();
+    const setGlobalSnackbar = useSetRecoilState(globalSnackbarStateStore);
     const [state, formAction] = useFormState(register, initialState);
 
-    console.log("state::: ", state);
+    if(state.result === 'success'){
+        router.back();
+        router.refresh();
+
+        setGlobalSnackbar({show:true, type:'SUCCESS', message:state.message});
+    }
+
+    if(state.result === 'fail'){
+        setGlobalSnackbar({show:true, type:'ERROR', message:state.message});
+    }
 
     return (
         <div className='w-fit min-h-[600px] mx-auto p-[20px] flex flex-col items-center space-y-[20px]
@@ -35,10 +50,10 @@ function SignUpPage() {
                         className='w-full'
                         required
                     />
-                    {/* { */}
-                    {/*     state.name === 'nickname' && */}
-                    {/*     <span className='pl-2 text-sm text-themeError'>{state.message}</span> */}
-                    {/* } */}
+                    {
+                        state.name === 'nickname' &&
+                        <span className='pl-2 text-sm text-themeError'>{state.message}</span>
+                    }
                 </div>
                 <div className='flex flex-col space-y-2'>
                     <Input
@@ -49,10 +64,10 @@ function SignUpPage() {
                         className='w-full'
                         required
                     />
-                    {/* { */}
-                    {/*     state.name === 'password' && */}
-                    {/*     <span className='pl-2 text-sm text-themeError'>{state.message}</span> */}
-                    {/* } */}
+                    {
+                        state.name === 'password' &&
+                        <span className='pl-2 text-sm text-themeError'>{state.message}</span>
+                    }
                 </div>
 
                 <div className='flex flex-col space-y-2'>
@@ -64,10 +79,10 @@ function SignUpPage() {
                         className='w-full'
                         required
                     />
-                    {/* { */}
-                    {/*     state.name === 'passwordCheck' && */}
-                    {/*     <span className='pl-2 text-sm text-themeError'>{state.message}</span> */}
-                    {/* } */}
+                    {
+                        state.name === 'passwordCheck' &&
+                        <span className='pl-2 text-sm text-themeError'>{state.message}</span>
+                    }
                 </div>
                 <div className='flex flex-col space-y-2'>
                     <Input
@@ -78,10 +93,10 @@ function SignUpPage() {
                         className='w-full'
                         required
                     />
-                    {/* { */}
-                    {/*     state.name === 'email' && */}
-                    {/*     <span className='pl-2 text-sm text-themeError'>{state.message}</span> */}
-                    {/* } */}
+                    {
+                        state.name === 'email' &&
+                        <span className='pl-2 text-sm text-themeError'>{state.message}</span>
+                    }
                 </div>
                 <Button
                     type='submit'
