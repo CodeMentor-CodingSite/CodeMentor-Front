@@ -1,6 +1,5 @@
 import { Link } from '@nextui-org/react';
-import PlanItem from '@/containers/studyplan';
-import { ProblemCategory, ProblemList } from '@/containers/problemList';
+import { PlanItem, ProblemCategory, ProblemList } from '@/containers/home';
 
 export const studyPlanItems = [
   {
