@@ -194,18 +194,18 @@ export default function ProblemNav({ onClick }: { onClick: () => void }) {
         </div>
       </NavbarMenu>
 
-      <NavbarContent className="absolute right-[228px]">
+      <NavbarContent className="absolute right-[248px]">
         <NavbarItem>
           <ButtonGroup className="gap-1">
             <Button
               startContent={<IconRun />}
-              className="font-bold text-2xl text-subtextDark dark:bg-componentDark"
+              className="text-xl font-bold text-subtextDark dark:bg-componentDark bg-component"
             >
               Run
             </Button>
             <Button
               startContent={<IconSubmit />}
-              className="font-bold text-2xl text-themeGreen dark:bg-componentDark"
+              className="text-xl font-bold text-themeGreen dark:bg-componentDark bg-component"
             >
               Submit
             </Button>
