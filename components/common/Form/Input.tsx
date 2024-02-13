@@ -21,7 +21,7 @@ function Input({
     <div
       className={classNames(
         disabled ? 'opacity-50 pointer-events-none' : '',
-        `relative mobile:text-sm ${props.className ? props.className : ''}`
+        `relative mobile:text-sm`
       )}
     >
       {label !== '' && (
@@ -29,7 +29,7 @@ function Input({
           {label}
         </label>
       )}
-      <input id={props.id} type="text" {...props} className='customInput'/>
+      <input id={props.id} type="text" {...props} className={classNames(`${props.className ?? props.className}`,'customInput')}/>
       {errorMessage !== '' && (
         <p className="text-red-500 text-md">{errorMessage}</p>
       )}
