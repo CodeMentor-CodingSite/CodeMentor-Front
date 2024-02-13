@@ -7,6 +7,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
   Button,
+  ButtonGroup,
   Link as NextUILink,
 } from '@nextui-org/react';
 import {
@@ -15,6 +16,8 @@ import {
   IconRandomPick,
   IconSolved,
   IconAttempted,
+  IconRun,
+  IconSubmit,
 } from '@/public/svgs';
 import capitalizeFirstChar from '@/utils/capitalizeFirstChar';
 
@@ -190,6 +193,25 @@ export default function ProblemNav({ onClick }: { onClick: () => void }) {
           ))}
         </div>
       </NavbarMenu>
+
+      <NavbarContent className="absolute right-[228px]">
+        <NavbarItem>
+          <ButtonGroup className="gap-1">
+            <Button
+              startContent={<IconRun />}
+              className="font-bold text-2xl text-subtextDark dark:bg-componentDark"
+            >
+              Run
+            </Button>
+            <Button
+              startContent={<IconSubmit />}
+              className="font-bold text-2xl text-themeGreen dark:bg-componentDark"
+            >
+              Submit
+            </Button>
+          </ButtonGroup>
+        </NavbarItem>
+      </NavbarContent>
     </section>
   );
 }
