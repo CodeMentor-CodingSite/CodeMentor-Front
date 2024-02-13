@@ -1,6 +1,4 @@
-import ProblemTemplate from './ProblemTemplate';
-import ProblemDescription from './ProblemDescription';
-import ProblemSolving from './ProblemSolving';
-import ProblemTest from './problemTest/ProblemTest';
-
-export { ProblemTemplate, ProblemDescription, ProblemSolving, ProblemTest };
+export { default as ProblemTemplate } from './ProblemTemplate';
+export { default as ProblemTest } from './problemTest';
+export * from './code';
+export * from './description';
