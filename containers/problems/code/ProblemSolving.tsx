@@ -6,7 +6,7 @@ import { useState, useCallback, useEffect } from 'react';
 // import { useTheme } from 'next-themes';
 
 export default function ProblemSolving({ id }: { id: string }) {
-  const [code, setCode] = useState(`// ${id}번 문제`);
+  const [code, setCode] = useState(``);
   const [mounted, setMounted] = useState(false);
   // const { theme } = useTheme();
 
@@ -14,17 +14,21 @@ export default function ProblemSolving({ id }: { id: string }) {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (code === '') {
-      setCode(`// ${id}번 문제`);
-    }
-  }, [code]);
-
   const onChangeTextarea = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       setCode(e.target.value);
     },
     []
+  );
+
+  const textareaTabHandler = useCallback(
+    (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        setCode(`${code} \t`);
+      }
+    },
+    [code]
   );
 
   if (!mounted) return null;
@@ -34,22 +38,24 @@ export default function ProblemSolving({ id }: { id: string }) {
       <div>
         <textarea
           onChange={onChangeTextarea}
-          className="absolute z-10 w-full h-full text-transparent bg-transparent border-none resize-none focus:ring-0"
+          onKeyDown={textareaTabHandler}
+          className="absolute z-10 w-full h-full bg-transparent border-none resize-none focus:ring-0"
+          value={code}
         />
       </div>
-      <div>
-        {/* <SyntaxHighlighter
+      {/* <div>
+        <SyntaxHighlighter
           style={theme === 'light' || theme === undefined ? coy : a11yDark}
           language="java"
           className="w-full h-[250px] overflow-auto absolute z-0"
           showLineNumbers
           useInlineStyles
-        > */}
+        >
         <p className="absolute z-0 w-full h-full px-[13px] py-[9px]  scrollbar-thin scrollbar-track-base-content/5 scrollbar-thumb-base-content/40 scrollbar-track-rounded-md scrollbar-thumb-rounded whitespace-pre-wrap overflow-hidden">
           {code}
         </p>
-        {/* </SyntaxHighlighter> */}
-      </div>
+        </SyntaxHighlighter>
+      </div> */}
     </div>
   );
 }

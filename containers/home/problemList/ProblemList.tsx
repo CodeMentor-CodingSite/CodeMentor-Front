@@ -10,7 +10,7 @@ import {
 } from '@/public/svgs';
 import capitalizeFirstChar from '@/utils/capitalizeFirstChar';
 
-export const problemItems = [
+const problemItems = [
   {
     status: 'todo',
     num: 1,

@@ -22,6 +22,8 @@ import IconRefresh from './Refresh';
 import IconTestCase from './TestCase';
 import IconTestResult from './TestResult';
 import IconBackToUserBoard from './IconBackToUserBoard';
+import IconRun from './Run';
+import IconSubmit from './Submit';
 
 export {
   IconDarkMode,
@@ -48,4 +50,6 @@ export {
   IconRefresh,
   IconTestCase,
   IconTestResult,
+  IconRun,
+  IconSubmit,
 };

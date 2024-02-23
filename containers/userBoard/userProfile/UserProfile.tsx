@@ -4,10 +4,10 @@ import UserAvatar from "@/components/common/UserAvatar";
 
 function UserProfile() {
   return (
-      <div className='w-full flex flex-col'>
+      <div className='flex flex-col w-full'>
         <div className='flex mb-2'>
           <UserAvatar imageSrc={null}/>
-          <div className='flex items-center space-x-1 mx-auto'>
+          <div className='flex items-center mx-auto space-x-1'>
             <span>test9864</span>
           </div>
         </div>
